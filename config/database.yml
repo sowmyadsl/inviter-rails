@@ -1,0 +1,20 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
+
+development:
+  <<: *default
+  database: inviter_development
+
+test:
+  <<: *default
+  database: inviter_test
+
+
+production:
+  <<: *default
+  database: inviter_production
+  username: inviter
+  password: <%= ENV['INVITER_DATABASE_PASSWORD'] %>
