@@ -9,6 +9,35 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="my-nav">
+            <ul>
+              <li><%= link_to "Inviter", root_path %></li>
+              <li><%= link_to "About", root_path %></li>
+              <% if current_user && current_user.admin %>
+                <li><%= link_to "Cart (#{@item_count}) ", cart_path(current_order) %> </li>
+              <% end %>
+              <% if current_user %>
+                <% if current_user.admin %>
+                  <li><%= link_to "Admin", rails_admin_path %></li>
+                <% end %>
+                <li><%= current_user.email %></li>
+                <li><%= link_to "Log Out", destroy_user_session_path, :method => "delete" %></li>
+              <% else %>
+                <li><%= link_to "Log In", new_user_session_path %></li>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <p class="red"><%= flash[:alert] %></p>
+          <p class="green"><%= flash[:notice] %></p>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

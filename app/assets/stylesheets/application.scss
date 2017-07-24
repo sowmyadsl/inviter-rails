@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ li {
+     padding: 0.5em;
+     text-decoration: none;
+     border-bottom: solid 1px #c4c4c4;
+
+   }
+
+ .red {
+   color: red;
+   &:hover {
+     color: red;
+     text-decoration: none;
+   }
+ }
+ .green {
+   color: green;
+ }
+ .my-nav ul {
+   padding-left: 60px;
+   margin-top: 30px;
+   list-style: none;
+   padding: 0;
+ }

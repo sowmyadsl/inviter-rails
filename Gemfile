@@ -16,7 +16,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'rspec-rails'
 gem 'jquery-rails'
+gem 'bootstrap-sass', '~> 3.3.6'
 gem 'shoulda-matchers'
+gem 'devise', '~> 4.3'
 
 gem 'actionmailer', '~> 5.0', '>= 5.0.0.1'
 
