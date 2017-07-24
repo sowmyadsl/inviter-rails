@@ -1,3 +1,4 @@
 class Event < ApplicationRecord
-  validates :name, :description, :date, :start, :presence => true
+  has_many :attendees
+  validates :name, :description, :date, :presence => true
 end

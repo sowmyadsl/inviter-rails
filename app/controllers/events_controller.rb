@@ -1,9 +1,6 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-  before_action :only => [:new, :create, :edit, :update, :destroy] do
-    redirect_to new_user_session_path unless current_user && current_user.admin
-  end
 
   def index
     @events = Event.all
