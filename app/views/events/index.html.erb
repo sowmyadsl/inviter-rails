@@ -9,15 +9,19 @@
 <br>
 <br>
 
- <% @events.each do |event| %>
- <div class="well">
+
+
+   <% @events.each do |event| %>
+   <div class="well">
    <h3><%= link_to event.name, event_path(event) %></h3>
    <h3><%= event.description%></h3>
    <h4><%= event.date %></h4>
+
    <p><%= link_to "Edit", edit_event_path(event) %></p>
    <p><%= link_to "Delete", event_path(event),
-                             :data => {:confirm => "You sure?",
-                                 :method => "delete"} %></p>
-
+ :data => {:confirm => "You sure?",
+     :method => "delete"} %></p>
+     
+    </div>
    <% end %>
- </div>
+   <br>
