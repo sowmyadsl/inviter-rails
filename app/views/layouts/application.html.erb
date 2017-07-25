@@ -12,7 +12,7 @@
   <body>
 
       <div class="row">
-        <div class="col-sm-3">
+        <div class="col-sm-3 sidebar">
           <div class="my-nav">
             <ul>
               <li><%=link_to "Inviter", root_path %></li>
@@ -29,12 +29,12 @@
               <% end %>
             </ul>
           </div>
-          <footer>
-            <a href="https://www.instagram.com/sowmyadsl/" target="_blank"><img src="assets/instagram.png" alt="instagram logo" id="instagram"></a>
-            <a href="https://www.linkedin.com/in/sowmyadinavahi/" target="_blank"><img src="assets/linkedin.png" alt="linkedin logo" id="linkedin"></a>
-              <a href="https://www.pinterest.com/sowmyadsl/" target="_blank"><img src="assets/pinterest.png" alt="pinterest logo" id="pinterest"></a>
-            <a href="https://twitter.com/sowmyadsl" target="_blank"><img src="assets/twitter.png" alt="twitter logo" id="twitter"></a>
-          </footer>
+          <div class="social">
+            <a href="https://www.instagram.com/sowmyadsl/" target="_blank"><img src="/assets/instagram.png" alt="instagram logo" id="instagram"></a>
+            <a href="https://www.linkedin.com/in/sowmyadinavahi/" target="_blank"><img src="/assets/linkedin.png" alt="linkedin logo" id="linkedin"></a>
+              <a href="https://www.pinterest.com/sowmyadsl/" target="_blank"><img src="/assets/pinterest.png" alt="pinterest logo" id="pinterest"></a>
+            <a href="https://twitter.com/sowmyadsl" target="_blank"><img src="/assets/twitter.png" alt="twitter logo" id="twitter"></a>
+          </div>
         </div>
         <div class="col-sm-9">
           <%= yield %>
