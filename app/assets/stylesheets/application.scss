@@ -20,8 +20,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+*{
+  font-family: 'Special Elite', cursive;
+}
 
-
+*{
+  padding: 0;
+  margin: 0;
+}
  li {
      padding: 0.5em;
      text-decoration: none;
@@ -40,17 +46,24 @@
    color: green;
  }
  .my-nav ul {
-   padding-left: 60px;
+   text-align: center;
    margin-top: 30px;
    list-style: none;
    padding: 0;
  }
 
+ .col-sm-3{
+   background-color: #FBCC61;
+   height: 1000px;
+ }
+
 .jumbotron{
-  background-color: black;
+  margin-left: -16px;
+  width: 1000px;
   max-width: 100%;
-  color: white;
-  h2::first-letter { 
-    color: #8A2BE2;
+  color: black;
+  h2::first-letter {
+    color: green;
+
 }
 }
