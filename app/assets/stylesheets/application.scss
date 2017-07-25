@@ -1,24 +1,24 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- /*
-   *= require rails_bootstrap_forms
-   */
- // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
- @import "bootstrap-sprockets";
- @import "bootstrap";
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+* vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+* files in this directory. Styles in this file should be added after the last require_* statement.
+* It is generally better to create a new file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+/*
+*= require rails_bootstrap_forms
+*/
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 *{
   font-family: 'Special Elite', cursive;
@@ -28,67 +28,93 @@
   padding: 0;
   margin: 0;
 }
- li {
-     padding: 0.5em;
+li {
+  padding: 1em;
+  text-decoration: none;
 
-     text-decoration: none;
+  a:hover {
+    color: black;
+    border-bottom:3px solid #fff;}
+  }
 
-     a:hover { border-bottom:3px solid #fff;}
-   }
-
-   a:link {
+  a:link {
     text-decoration: none;
-}
+  }
 
-a:visited {
+  a:visited {
 
     text-decoration: none;
-}
+  }
 
 
 
- .red {
-   color: red;
-   &:hover {
-     color: red;
-     text-decoration: none;
-   }
- }
- .green {
-   color: green;
- }
- .my-nav ul {
-   text-align: center;
-   margin-top: 30px;
-   list-style: none;
-   padding: 0;
- }
-
- .col-sm-3{
-   margin-left: -46px;
-   background-color: #FBCC61;
-   height: 1000px;
- }
-
-.jumbotron{
-  margin-left: -15px;
-  width: 1000px;
-  max-width: 100%;
-  font-size: 40px;
-  color: black;
-
-  h2::first-letter {
+  .red {
+    color: red;
+    &:hover {
+      color: red;
+      text-decoration: none;
+    }
+  }
+  .green {
     color: green;
+  }
+  .my-nav ul {
+    text-align: center;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+  }
 
-}
-}
+  .col-sm-3{
 
-* {
-  -webkit-border-radius: 0 !important;
-     -moz-border-radius: 0 !important;
-          border-radius: 0 !important;
-}
+    background-color: #FBCC61;
+    height: 1000px;
+  }
 
-a{
-  font-size: 15px;
-}
+  .jumbotron{
+
+    font-size: 40px;
+    color: black;
+
+    h2::first-letter {
+      color: green;
+
+    }
+  }
+
+
+  a{
+    color: black;
+    font-size: 20px;
+  }
+
+
+  footer{
+
+
+    #instagram {
+      display:inline-block;
+      position: relative;
+      width: 80px;
+    }
+
+    #pinterest {
+      display:inline-block;
+      position: relative;
+      width: 80px;
+    }
+
+    #linkedin{
+      display:inline-block;
+      position: relative;
+      width: 80px;
+    }
+
+    #twitter{
+      display:inline-block;
+      position: relative;
+      margin-left: -5px;
+      width: 90px;
+    }
+
+  }
