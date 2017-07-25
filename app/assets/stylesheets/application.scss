@@ -45,3 +45,12 @@
    list-style: none;
    padding: 0;
  }
+
+.jumbotron{
+  background-color: black;
+  max-width: 100%;
+  color: white;
+  h2::first-letter { 
+    color: #8A2BE2;
+}
+}

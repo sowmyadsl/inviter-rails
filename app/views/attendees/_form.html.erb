@@ -1,0 +1,13 @@
+<%= render "layouts/errors", :object => @attendee %>
+
+<%= form_for [@event, @attendee] do |f| %>
+<div class="well">
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true %>
+  <br>
+  <%= f.label :email_address %>
+  <%= f.email_field :email_address %>
+  <br>
+  <%= f.submit "Submit" %>
+</div>
+<% end %>
