@@ -20,6 +20,7 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'shoulda-matchers'
 gem 'devise', '~> 4.3'
 gem 'bootstrap_form'
+gem 'rails_admin', '~> 1.2'
 
 gem 'actionmailer', '~> 5.0', '>= 5.0.0.1'
 

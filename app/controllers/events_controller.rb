@@ -4,6 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @events = Event.all
+    @attendees = Attendee.all
   end
 
   def show
@@ -48,6 +49,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:event).permit(:name, :description, :date, :start)
+    params.require(:event).permit(:name, :description, :date, :start, :user_id)
   end
 end
