@@ -47,6 +47,15 @@ class EventsController < ApplicationController
     end
   end
 
+  def send_invites
+    @event = Event.find(params[:id])
+    #I want an invite to be sent to attendee's email address
+    @event.attendees.each do |attendee|
+      AttendeeMailer.send_invite(@event.name, attendee).deliver
+    end
+    redirect_to request.env['HTTP_REFERER'], notice: "Invites sent!"
+  end
+
   private
   def event_params
     params.require(:event).permit(:name, :description, :date, :start, :user_id)

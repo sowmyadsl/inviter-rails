@@ -22,9 +22,12 @@ gem 'devise', '~> 4.3'
 gem 'bootstrap_form'
 gem 'rails_admin', '~> 1.2'
 
+
+
 gem 'actionmailer', '~> 5.0', '>= 5.0.0.1'
 
 group :development, :test do
+  gem "letter_opener"
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
