@@ -149,5 +149,31 @@ li {
 
 button a {
   min-width: 50px;
+  margin: 0;
+  padding: 0;
   font-size: 15px;
+}
+
+th{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.glyphicon{
+  font-size: 15px;
+}
+.well{
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 2%;
+  width: 90%;
+  margin: 0.5%;
+}
+.card{
+  border: 1px solid #7d6659;
+  padding: 2%;
+  border-radius: 10px;
+  width: 90%;
+  background: lightgrey;
 }

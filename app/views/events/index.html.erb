@@ -1,25 +1,53 @@
 
-   <% current_user.events.each do |event| %>
-   <div class="well">
-    <h3><%= link_to event.name, event_path(event) %></h3>
-    <h3><%= event.description%></h3>
-    <h4><%= event.date %></h4>
+<% current_user.events.each do |event| %>
+<div class="well">
+  <h3><%= link_to event.name, event_path(event) %></h3>
+  <h3><%= event.description%></h3>
+  <h4><%= event.date %></h4>
 
-    <button class="btn btn-info"><%= link_to "Edit", edit_event_path(event) %></button>
-    <button class="btn btn-info"><%= link_to "Delete", event_path(event),
-    :data => {:confirm => "You sure?",
-     :method => "delete"} %></button>
-     <br>
-     <br>
-     <%= link_to  new_event_attendee_path(event), class: "btn btn-default" do %>
-      <i class="glyphicon glyphicon-plus"></i> Add Attendees
-     <% end %>
-
-    <% event.attendees.each do |attendee| %>
+  <button class="btn btn-info"><%= link_to "Edit", edit_event_path(event) %></button>
+  <button class="btn btn-info"><%= link_to "Delete", event_path(event),
+  :data => {:confirm => "You sure?",
+    :method => "delete"} %></button>
     <br>
-    <%= attendee.name %> |
-    <%= attendee.email_address %>
-   <% end %>
-
-   <% end %>
-</div>
+      <h3> Attendees </h3>
+      <div class="card">
+      <table style="width:75%">
+        <tr>
+          <th></th>
+          <th></th>
+          <th>Name</th>
+          <th>Email Address</th>
+        </tr>
+        <% event.attendees.each do |attendee| %>
+        <tr>
+          <td>
+            <%= link_to  new_event_attendee_path(event) do %>
+            <i class="glyphicon glyphicon-remove"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to  new_event_attendee_path(event) do %>
+            <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </td>
+          <td><%= attendee.name %></td>
+          <td><%= attendee.email_address %></td>
+        </tr>
+        <% end %>
+        <tr>
+          <td></td>
+          <td></td>
+          <td>
+            <%= link_to  new_event_attendee_path(event) do %>
+            <i class="glyphicon glyphicon-plus"></i>
+            <% end %>
+          </td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <button class="btn btn-info"><%= link_to "Send Invites", edit_event_path(event) %></button>
+    <% end %>
+  </div>

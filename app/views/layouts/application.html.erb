@@ -38,11 +38,10 @@
         </div>
         <div class="col-sm-9">
           <%= yield %>
-          <p class="red"><%= flash[:alert] %></p>
-          <p class="green"><%= flash[:notice] %></p>
+          <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert alert-success") %>
+          <% end %>
         </div>
-
-      </div>
 
   </body>
 </html>
