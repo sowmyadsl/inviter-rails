@@ -5,7 +5,7 @@
 
 ##Landing page:
 
-![screenshot]()
+![screenshot](https://github.com/sowmyadsl/inviter-rails/blob/master/public/screencapture-localhost-3000-1501178900106.png)
 
 It handles the following user stories:
 
