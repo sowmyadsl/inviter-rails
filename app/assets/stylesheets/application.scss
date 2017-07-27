@@ -72,6 +72,10 @@ li {
     height: 1000px;
   }
 
+  .header h1 {
+    text-align: center;
+  }
+
   .jumbotron{
     background-color: #C9C5C3;
     border: 1px solid black;
@@ -97,6 +101,7 @@ li {
     flex-direction: column;
     height: 100vh;
     border: 1px solid black;
+    
 
     .social {
       margin-top: auto;
@@ -192,4 +197,23 @@ th{
   border-radius: 10px;
   width: 90%;
   background: lightgrey;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/*CHILD DIV CARD LIST*/
+
+.image {
+  padding: 10px;
+  min-height: 100px;
+  min-width: 300px;
+  display: flex;
+  margin: 8px;
+  justify-content: center;
+  align-items: center;
 }
