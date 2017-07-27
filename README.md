@@ -1,4 +1,5 @@
 # Inviter
+(Still under development..)
 
 ## A Rails web application to invite people and send invitations to the attendees. Also added authentication for users to signup and create events and send invites using action mailer.
 
@@ -22,7 +23,32 @@ Further Explorations:
 - [x] Add Actionmailer to deliver the invite to attendee's email address. But I used letter opener(for now), Planning to use mail gun and SMTP for production.
 - [ ] Add AJAX to add, delete and update an event.
 - [ ] Add AJAX to edit an attendee.
+- [ ] Add admin functionality to add,edit and delete templates and integrate the templates with events on the splash page.
+- [ ] Add search scope to search from a list of categories to choose the templates for events.
+- [ ] Add RSVP status and keep track of the RSVP status and update on the event page.
 
+
+
+## Prerequisites
+
+You will need the following things properly installed on your computer.
+
+* [Git](https://git-scm.com/)
+* [Postgres](https://www.postgresql.org/)
+* [Ruby](https://www.ruby-lang.org/en/downloads/)
+* [Rails](http://rubyonrails.org/)
+
+
+## Installation
+
+In your terminal:
+* `git clone https://github.com/sowmyadsl/inviter`
+* `cd inviter`
+* `bundle install`
+* Open another terminal window and type `postgres`.  Leave this window open.
+* In your first terminal window type:
+* `bundle exec rake db:setup`
+* `bundle exec rake db:test:prepare`
 
 ## Setup/Installation Requirements
 
@@ -32,22 +58,45 @@ Further Explorations:
 $ bundle install
 $ rails db:create
 $ rails db:schema:load
-$ rails db:seed
 $ rails s
 ```
 
-## Technologies:
+## Development server
 
-* HTML/SCSS
-* Rails
+Run `bundle exec rails s` for a dev server. Navigate to `http://localhost:3000/`. The app will automatically reload if you change any of the source files.
+
+
+## Running tests
+
+This app includes unit  testing using RSpec, Shouldamatchers, and Capybara for testing.
+Run `bundle exec rspec` in terminal to test.
+(Further testing will be added in the future)
+
+## Technologies Used
+
 * Ruby
+* Rails
+* ActiveRecord
+* Postgres
+* Bundler
+* Rake Gem
+* Devise Gem
+* Actionmailer
+* letteropener
+* bootstrap_for
 * Rspec
-* Capybara
-* Faker
+* HTML
+* CSS
+* Bootstrap
+* ES6
 
+## Known Bugs
+_N/A_
 
-### License
+## Support and Contact details
 
-* MIT
+Please feel free to contact me at sowmya.dsl@gmail.com with any questions.
 
-Copyright (c) 2017 **Sowmya Dinavahi**
+## License
+
+This software is licensed under the MIT license Copyright © 2017 Sowmya Dinavahi
