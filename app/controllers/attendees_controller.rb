@@ -48,7 +48,7 @@ class AttendeesController < ApplicationController
       flash[:notice] = "Attendee successfully deleted!"
       # redirect_to request.env['HTTP_REFERER']
       respond_to do |format|
-        format.html { redirect_to request.env['HTTP_REFERER'] }
+        format.html { redirect_to request.env['HTTP_REFERER'],notice: "#{@attendee.name} deleted successfully"  }
         format.js
       end
     else

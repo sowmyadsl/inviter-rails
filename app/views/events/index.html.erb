@@ -36,9 +36,7 @@
           <td></td>
           <td></td>
           <td>
-            <%= link_to  new_event_attendee_path(event) do %>
-            <i class="glyphicon glyphicon-plus"></i>
-            <% end %>
+            <%= link_to  new_event_attendee_path(event), id: "new_attendee", remote: true do %><i class="glyphicon glyphicon-plus"></i><% end %>
           </td>
           <td></td>
         </tr>
