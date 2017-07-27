@@ -13,12 +13,11 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 
 $(document).ready(function() {
   $(document).on('click','#remove',function() {
    $(this).closest("tr").remove();
-   
+
  });
 });

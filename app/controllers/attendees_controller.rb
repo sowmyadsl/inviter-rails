@@ -17,7 +17,7 @@ class AttendeesController < ApplicationController
     @event = Event.find(params[:event_id])
     @attendee = @event.attendees.find(params[:id])
   end
-  
+
   def create
     @event = Event.find(params[:event_id])
     @attendee = @event.attendees.new(attendee_params)
@@ -46,7 +46,11 @@ class AttendeesController < ApplicationController
     @attendee = @event.attendees.find(params[:id])
     if @attendee.destroy
       flash[:notice] = "Attendee successfully deleted!"
-      redirect_to request.env['HTTP_REFERER']
+      # redirect_to request.env['HTTP_REFERER']
+      respond_to do |format|
+        format.html { redirect_to request.env['HTTP_REFERER'] }
+        format.js
+      end
     else
       render :new
     end

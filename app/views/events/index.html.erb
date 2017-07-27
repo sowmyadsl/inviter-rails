@@ -22,7 +22,7 @@
         <% event.attendees.each do |attendee| %>
         <tr>
           <td>
-            <%= link_to "", event_attendee_path(event,attendee), :method => "delete", class: "glyphicon glyphicon-remove" %>
+            <%= link_to "", event_attendee_path(event,attendee), :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
             <!-- <i id="remove" class="glyphicon glyphicon-remove"></i> -->
           </td>
           <td>
@@ -37,7 +37,7 @@
           <td></td>
           <td>
             <%= link_to  new_event_attendee_path(event) do %>
-            <i class="glyphicon glyphicon-plus">Add</i>
+            <i class="glyphicon glyphicon-plus"></i>
             <% end %>
           </td>
           <td></td>
