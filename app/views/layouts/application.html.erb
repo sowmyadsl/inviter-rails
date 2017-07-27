@@ -37,10 +37,10 @@
           </div>
         </div>
         <div class="col-sm-9">
-          <%= yield %>
           <% flash.each do |name, msg| %>
           <%= content_tag(:div, msg, class: "alert alert-success") %>
           <% end %>
+          <%= yield %>
         </div>
         <h4 class="disclaimer">**<strong>Disclaimer:</strong>  Potentially Inappropriate events will be deleted by the admin!</h4>
 
