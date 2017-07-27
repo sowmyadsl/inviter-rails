@@ -100,8 +100,8 @@ li {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    border: 1px solid black;
-    
+
+
 
     .social {
       margin-top: auto;
@@ -216,4 +216,9 @@ th{
   margin: 8px;
   justify-content: center;
   align-items: center;
+}
+
+.disclaimer{
+  padding-bottom: 100px;
+  float: right;
 }
