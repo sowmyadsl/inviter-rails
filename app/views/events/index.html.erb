@@ -24,9 +24,9 @@
             <%= link_to "", event_attendee_path(event,attendee), id: 'attendee-remove', :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
           </td>
           <td>
-            <div id:"edit_attendee: <%= attendee.id %>">
-            <%= link_to "", edit_event_attendee_path(event,attendee), class: "glyphicon glyphicon-pencil", remote: true %>
-          </div>
+
+            <%= link_to "", edit_event_attendee_path(event,attendee), id: 'edit_attendee', class: "glyphicon glyphicon-pencil", remote: true %>
+
           </td>
           <td><%= attendee.name %></td>
           <td><%= attendee.email_address %></td>
@@ -44,5 +44,5 @@
     </div>
     <br>
     <button class="btn btn-info"><%= link_to "Send Invites", send_invites_path(event) %></button>
+    </div>
     <% end %>
-  </div>

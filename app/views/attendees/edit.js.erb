@@ -1,3 +1,6 @@
-// var element = document.getElementById("<%=j (@attendee.id).to_s %>");
+// var element = $("<%=j (@attendee.id).to_s %>");
 // element.hide().after('<%= j render("form") %>');
-$('#edit_attendee: <%= j (@attendee.id).to_s%>').hide().after('<%= j render("form") %>');
+// $('#edit_attendee: <%= j (@attendee.id).to_s%>').hide().after('<%= j render("form") %>');
+console.log('hi!');
+
+$('#edit_attendee').hide().after('<%= j render("form") %>');

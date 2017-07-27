@@ -37,7 +37,7 @@ class AttendeesController < ApplicationController
       flash[:notice] = "Attendee successfully updated!"
       respond_to do |format|
         format.html {redirect_to request.env['HTTP_REFERER']}
-        format.js
+        format.js 
       end
     else
       render :edit
