@@ -17,7 +17,8 @@
 //= require_tree .
 
 $(document).ready(function() {
-    $("#btn").click(function(){
-        alert("button");
-    });
+  $(document).on('click','#remove',function() {
+   $(this).closest("tr").remove();
+   
+ });
 });
