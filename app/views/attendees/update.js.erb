@@ -1,2 +1,3 @@
+$('#attendee_form').remove();
 var element = document.getElementById("<%=j (@attendee.id).to_s %>");
-element.remove();
+element.replaceWith(@attendee);

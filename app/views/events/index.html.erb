@@ -1,4 +1,3 @@
-
 <% current_user.events.each do |event| %>
 <div class="well">
   <h3><%= link_to event.name, event_path(event) %></h3>
@@ -11,8 +10,8 @@
     :method => "delete"} %></button>
     <br>
       <h3> Attendees </h3>
-      <div class="card">
-      <table style="width:75%">
+      <div id="card">
+      <table id="attendees_list" style="width:75%">
         <tr>
           <th></th>
           <th></th>
@@ -20,13 +19,12 @@
           <th>Email Address</th>
         </tr>
         <% event.attendees.each do |attendee| %>
-        <tr>
+        <tr id="<%= attendee.id%>">
           <td>
-            <%= link_to "", event_attendee_path(event,attendee), :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
-            <!-- <i id="remove" class="glyphicon glyphicon-remove"></i> -->
+            <%= link_to "", event_attendee_path(event,attendee), id: 'attendee-remove', :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
           </td>
           <td>
-            <%= link_to "", edit_event_attendee_path(event,attendee), class: "glyphicon glyphicon-pencil" %>
+            <%= link_to "", edit_event_attendee_path(event,attendee), id:"edit_attendee", class: "glyphicon glyphicon-pencil", remote: true %>
           </td>
           <td><%= attendee.name %></td>
           <td><%= attendee.email_address %></td>
@@ -36,7 +34,7 @@
           <td></td>
           <td></td>
           <td>
-            <%= link_to  new_event_attendee_path(event), id: "new_attendee", remote: true do %><i class="glyphicon glyphicon-plus"></i><% end %>
+            <%= link_to new_event_attendee_path(event), id: "new_attendee", remote: true do %><i class="glyphicon glyphicon-plus"></i><% end %>
           </td>
           <td></td>
         </tr>

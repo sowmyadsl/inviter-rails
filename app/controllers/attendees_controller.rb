@@ -5,7 +5,6 @@ class AttendeesController < ApplicationController
 
   def show
     @event = Event.find(params[:event_id])
-    @attendee = Attendee.all
   end
 
   def new
@@ -20,10 +19,12 @@ class AttendeesController < ApplicationController
 
   def create
     @event = Event.find(params[:event_id])
-    @attendee = @event.attendees.new(attendee_params)
+    @attendee = @event.attendees.create!(attendee_params)
     if @attendee.save
-      flash[:notice] = "Attendee successfully added!"
-      redirect_to request.env['HTTP_REFERER']
+      respond_to do |format|
+        format.html { redirect_to events_path }
+        format.js
+      end
     else
       render :new
     end
@@ -34,7 +35,10 @@ class AttendeesController < ApplicationController
     @attendee = @event.attendees.find(params[:id])
     if @attendee.update(attendee_params)
       flash[:notice] = "Attendee successfully updated!"
-      redirect_to request.env['HTTP_REFERER']
+      respond_to do |format|
+        format.html {redirect_to request.env['HTTP_REFERER']}
+        format.js
+      end
     else
       render :edit
     end
@@ -48,7 +52,7 @@ class AttendeesController < ApplicationController
       flash[:notice] = "Attendee successfully deleted!"
       # redirect_to request.env['HTTP_REFERER']
       respond_to do |format|
-        format.html { redirect_to request.env['HTTP_REFERER'],notice: "#{@attendee.name} deleted successfully"  }
+        format.html { redirect_to request.env['HTTP_REFERER'] }
         format.js
       end
     else

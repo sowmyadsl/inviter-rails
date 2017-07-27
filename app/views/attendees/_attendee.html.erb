@@ -1,0 +1,21 @@
+<%= render "layouts/errors", :object => @event %>
+<tr id=<%= @attendee.id %>>
+    <%= form_for [@event, @attendee], remote: true do |f|%>
+    <td>
+      <%= link_to "", event_attendee_path(@event,attendee),id: 'attendee-remove', :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
+    </td>
+    <td>
+      <%= link_to "", edit_event_attendee_path(@event,attendee), class: "glyphicon glyphicon-pencil" %>
+    </td>
+      <td><%=attendee.name %></td>
+      <td><%=attendee.email_address %></td>
+    <% end %>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>
+    <%= link_to  new_event_attendee_path(@event), id: "new_attendee", remote: true do %><i class="glyphicon glyphicon-plus"></i><% end %>
+  </td>
+  <td></td>
+</tr>

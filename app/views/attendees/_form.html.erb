@@ -1,13 +1,14 @@
 <%= render "layouts/errors", :object => @attendee %>
 
-<%= form_for [@event, @attendee] do |f| %>
-<div class="well">
-  <%= f.label :name %>
-  <%= f.text_field :name, autofocus: true %>
-  <br>
-  <%= f.label :email_address %>
-  <%= f.email_field :email_address %>
-  <br>
-  <%= f.submit "Submit" %>
+<div id="attendee_form">
+  <%= form_for [@event, @attendee], remote: true do |f| %>
+  <div class="well">
+    <%= f.text_field :name, placeholder: "name", autofocus: true %>
+    <br>
+    <%= f.email_field :email_address, placeholder: "email address"  %>
+    <br>
+    <%= f.submit "Submit" %>
+    <%= link_to "Cancel", :back, {:class =>"btn btn-default"}%>
+  </div>
+  <% end %>
 </div>
-<% end %>
