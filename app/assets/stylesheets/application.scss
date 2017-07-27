@@ -216,9 +216,12 @@ th{
   margin: 8px;
   justify-content: center;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 .disclaimer{
-  padding-bottom: 100px;
+  bottom: 0;
+  right: 0;
+  position: absolute;
   float: right;
 }
