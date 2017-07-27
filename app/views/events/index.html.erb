@@ -24,7 +24,9 @@
             <%= link_to "", event_attendee_path(event,attendee), id: 'attendee-remove', :method => "delete", class: "glyphicon glyphicon-remove", remote: true %>
           </td>
           <td>
-            <%= link_to "", edit_event_attendee_path(event,attendee), id:"edit_attendee", class: "glyphicon glyphicon-pencil", remote: true %>
+            <div id:"edit_attendee: <%= attendee.id %>">
+            <%= link_to "", edit_event_attendee_path(event,attendee), class: "glyphicon glyphicon-pencil", remote: true %>
+          </div>
           </td>
           <td><%= attendee.name %></td>
           <td><%= attendee.email_address %></td>

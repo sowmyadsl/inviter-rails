@@ -1,3 +1,7 @@
 $('#attendee_form').remove();
+$('#edit_attendee').show();
+var edited_attendee = "<%= j (@attendee) %>"
 var element = document.getElementById("<%=j (@attendee.id).to_s %>");
-element.replaceWith(@attendee);
+var rowId = element.rowIndex;
+element.remove();
+("<%= j (@attendee) %>").insertAfter(rowId);
