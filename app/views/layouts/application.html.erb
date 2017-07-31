@@ -20,7 +20,7 @@
 
               <% if current_user %>
               <li><%= link_to "My events", events_path %></li>
-                <li><%= link_to "Add a new event", new_event_path %></li>
+                <!-- <li><%= link_to "Add a new event", new_event_path, id: "new_event_x", remote: true %></li> -->
                 <li><%= current_user.email %></li>
                 <li><%= link_to "Log Out", destroy_user_session_path, :method => "delete" %></li>
               <% else %>
@@ -42,7 +42,6 @@
           <% end %>
           <%= yield %>
         </div>
-        <h4 class="disclaimer">**<strong>Disclaimer:</strong>  Potentially Inappropriate events will be deleted by the admin!</h4>
 
   </body>
 </html>

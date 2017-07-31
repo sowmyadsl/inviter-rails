@@ -1,4 +1,5 @@
-
 console.log('<%= @attendee.id %>');
 $('#attendee_form').remove();
-$('#edit_attendee').html('<%= @attendee.name %>');
+var element = document.getElementById("<%=j (@attendee.id).to_s %>");
+element.remove();
+$('#edit_attendee').append('<%= j render(@attendee) %></tr>');

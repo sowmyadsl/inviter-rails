@@ -1,7 +1,6 @@
 <%= render "layouts/errors", :object => @event %>
-
-<%= form_for @event do |f| %>
-<div class="well">
+<%= form_for @event, id: "event_form",remote: true do |f| %>
+<div class="well_event">
   <%= f.label :name %>
   <%= f.text_field :name, autofocus: true %>
   <br>
